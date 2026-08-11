@@ -1,0 +1,16 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        #use char
+        alphabet = [0] * 26
+        for ch in s:
+            alphabet[ord(ch) - ord('a')] += 1
+        for ch in t:
+            alphabet[ord(ch) - ord('a')] -= 1
+        
+        if not any(alphabet):
+            return True
+        return False
+
+        
